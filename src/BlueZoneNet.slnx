@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="BlueZoneNet.Adapter.ForObtainingRates.Stub/BlueZoneNet.Adapter.ForObtainingRates.Stub.csproj" />
+  <Project Path="BlueZoneNet.Adapter.ForParkingCars.WebUI/BlueZoneNet.Adapter.ForParkingCars.WebUI.csproj" />
+  <Project Path="BlueZoneNet.Adapter.ForPaying.Spy/BlueZoneNet.Adapter.ForPaying.Spy.csproj" />
+  <Project Path="BlueZoneNet.Adapter.ForStoringTickets.Fake/BlueZoneNet.Adapter.ForStoringTickets.Fake.csproj" />
+  <Project Path="BlueZoneNet.Driver.ForCheckingCars.Test/BlueZoneNet.Driver.ForCheckingCars.Test.csproj" />
+  <Project Path="BlueZoneNet.Driver.ForParkingCars.Test/BlueZoneNet.Driver.ForParkingCars.Test.csproj" />
+  <Project Path="BlueZoneNet.Hexagon/BlueZoneNet.Hexagon.csproj" />
+</Solution>
