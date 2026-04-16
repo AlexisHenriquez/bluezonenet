@@ -42,7 +42,7 @@ public class CarParker : IForParkingCars
         
         // Calc ending date-time
         string rateName = purchaseTicketRequest.RateName;
-        Rate rate = this.rateProvider.FindByName(rateName);
+        Rate? rate = this.rateProvider.FindByName(rateName);
         RateCalculator rateCalculator = new RateCalculator(rate);
         DateTime clock = purchaseTicketRequest.Clock;
         DateTime starting = clock;

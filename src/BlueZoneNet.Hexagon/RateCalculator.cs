@@ -4,9 +4,9 @@ namespace BlueZoneNet.Hexagon;
 
 public class RateCalculator
 {
-    private readonly Rate rate;
+    private readonly Rate? rate;
 
-    public RateCalculator(Rate rate)
+    public RateCalculator(Rate? rate)
     {
         this.rate = rate;
     }
@@ -14,6 +14,11 @@ public class RateCalculator
     public DateTime GetUntilGivenAmount(DateTime from, double amount)
     {
         // minutes = (amount*60)/amountPerHour
+        if (this.rate is null)
+        {
+            return from;
+        }
+        
         int minutes = (int) ((amount*60.0) / this.rate.AmountPerHour);
         return from.AddMinutes(minutes);
     }
