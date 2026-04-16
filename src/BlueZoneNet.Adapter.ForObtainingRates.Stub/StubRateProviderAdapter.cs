@@ -2,6 +2,9 @@ using BlueZoneNet.Hexagon.Ports.Driven.ForObtainingRates;
 
 namespace BlueZoneNet.Adapter.ForObtainingRates.Stub;
 
+/**
+ * Driven adapter that implements "forobtainingrates" port with a stub test double.
+ */
 public class StubRateProviderAdapter : IForObtainingRates
 {
 	private List<Rate> rates;

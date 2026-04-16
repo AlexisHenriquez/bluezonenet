@@ -2,6 +2,9 @@ using BlueZoneNet.Hexagon.Ports.Driven.ForPaying;
 
 namespace BlueZoneNet.Adapter.ForPaying.Spy;
 
+/**
+ * Driven adapter that implements "forpaying" port with a "spy" test double.
+ */
 public class SpyPaymentServiceAdapter : IForPaying
 {
     private List<PayRequest> paymentSpool;
