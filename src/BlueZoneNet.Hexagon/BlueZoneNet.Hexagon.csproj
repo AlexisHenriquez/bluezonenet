@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Ports\" />
     <Folder Include="Ports\Driven\" />
     <Folder Include="Ports\Driven\ForObtainingRates\" />
     <Folder Include="Ports\Driven\ForPaying\" />
     <Folder Include="Ports\Driven\ForStoringTickets\" />
+    <Folder Include="Ports\Driving\ForCheckingCars\" />
+    <Folder Include="Ports\Driving\ForConfiguringApp\" />
   </ItemGroup>
 
 </Project>
