@@ -57,7 +57,7 @@ public class AppConfigurator : IForConfiguringApp
         return this.ticketStore.NextAvailableCode();
     }
 
-    public PayRequest GetLastPayRequestDone()
+    public PayRequest? GetLastPayRequestDone()
     {
         return this.paymentService.LastPayRequest();
     }

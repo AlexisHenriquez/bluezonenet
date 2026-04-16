@@ -14,6 +14,6 @@ public interface IForConfiguringApp
     public void EraseTicket(string ticketCode);
     public void SetNextTicketCodeToReturn(string ticketCode);
     public string GetNextTicketCodeToReturn();
-    public PayRequest GetLastPayRequestDone();
+    public PayRequest? GetLastPayRequestDone();
     public void SetPaymentErrorPercentage(int percent);
 }

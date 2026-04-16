@@ -6,6 +6,6 @@ namespace BlueZoneNet.Hexagon.Ports.Driven.ForPaying;
 public interface IForPaying
 {
     public void Pay(PayRequest payRequest);
-    public PayRequest LastPayRequest();
+    public PayRequest? LastPayRequest();
     public void SetPayErrorGenerationPercentage(int percent);
 }
