@@ -58,7 +58,7 @@ public class StubRateProviderAdapter : IForObtainingRates
 
 	public bool Exists(string rateName)
     {
-		return (FindByName(rateName) is not null);
+		return FindByName(rateName) is not null;
 	}
 
 	public void Empty()

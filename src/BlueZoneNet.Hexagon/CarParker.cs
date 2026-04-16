@@ -55,7 +55,7 @@ public class CarParker : IForParkingCars
         return ticketCode;
     }
 
-    public Ticket GetTicket(string ticketCode)
+    public Ticket? GetTicket(string ticketCode)
     {
         return this.ticketStore.FindByCode(ticketCode);
     }

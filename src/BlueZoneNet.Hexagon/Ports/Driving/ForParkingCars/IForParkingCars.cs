@@ -37,5 +37,5 @@ public interface IForParkingCars
 	 * ticketCode Code of a purchased ticket.
 	 * returns The ticket with the given ticket code, or null if it doesn't exist any ticket with such a code.
 	 */
-	public Ticket GetTicket(string ticketCode);
+	public Ticket? GetTicket(string ticketCode);
 }
