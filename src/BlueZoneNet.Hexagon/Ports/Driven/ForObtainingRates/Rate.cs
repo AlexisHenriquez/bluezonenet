@@ -8,7 +8,7 @@ namespace BlueZoneNet.Hexagon.Ports.Driven.ForObtainingRates;
 public class Rate
 {
 	public string Name { get; set; } = default!;
-	private double AmountPerHour { get; set; }
+	public double AmountPerHour { get; set; }
 
 	public override string ToString()
     {

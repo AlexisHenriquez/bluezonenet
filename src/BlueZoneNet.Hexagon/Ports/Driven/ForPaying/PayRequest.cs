@@ -5,4 +5,12 @@ public class PayRequest
     public string TicketCode { get; set; } = default!;
     public string PaymentCard { get; set; } = default!;
     public double Amount { get; set; }
+    public double MoneyToPay { get; }
+
+    public PayRequest(string ticketCode, string paymentCard, double moneyToPay)
+    {
+        TicketCode = ticketCode;
+        PaymentCard = paymentCard;
+        MoneyToPay = moneyToPay;
+    }
 }

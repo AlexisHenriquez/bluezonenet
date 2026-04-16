@@ -3,7 +3,7 @@ namespace BlueZoneNet.Hexagon.Ports.Driven.ForStoringTickets;
 /**
  * DRIVEN PORT
  */
-public interface ForStoringTickets
+public interface IForStoringTickets
 {
     public string NextCode();
     public Ticket FindByCode (string ticketCode);

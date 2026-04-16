@@ -6,7 +6,7 @@ namespace BlueZoneNet.Hexagon.Ports.Driving.ForParkingCars;
 /**
  * DRIVER PORT
  */
-public interface ForParkingCars
+public interface IForParkingCars
 {
 	/**
 	 * Returns the available rates in the city, indexed by name.

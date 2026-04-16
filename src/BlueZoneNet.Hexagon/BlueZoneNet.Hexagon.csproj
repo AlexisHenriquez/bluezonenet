@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Factory\" />
     <Folder Include="Ports\Driven\" />
     <Folder Include="Ports\Driven\ForObtainingRates\" />
     <Folder Include="Ports\Driven\ForPaying\" />

@@ -12,10 +12,24 @@ namespace BlueZoneNet.Hexagon.Ports.Driven.ForStoringTickets;
  */
 public class Ticket
 {
-	public string Code { get; set; } = default!;
+    public string Code { get; set; } = default!;
 	public string CarPlate { get; set; } = default!;
 	public string RateName { get; set; } = default!;
 	public DateTime StartingDateTime { get; set; }
 	public DateTime EndingDateTime { get; set; }
 	public double Price { get; set; }
+    public string TicketCode { get; } = default!;
+    public DateTime Starting { get; }
+    public DateTime Ending { get; }
+    public double MoneyToPay { get; }
+
+	public Ticket(string ticketCode, string carPlate, string rateName, DateTime starting, DateTime ending, double moneyToPay)
+    {
+        TicketCode = ticketCode;
+        CarPlate = carPlate;
+        RateName = rateName;
+        Starting = starting;
+        Ending = ending;
+        MoneyToPay = moneyToPay;
+    }
 }
