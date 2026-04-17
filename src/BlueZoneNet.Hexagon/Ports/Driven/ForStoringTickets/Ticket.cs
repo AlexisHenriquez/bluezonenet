@@ -18,18 +18,14 @@ public class Ticket
 	public DateTime StartingDateTime { get; set; }
 	public DateTime EndingDateTime { get; set; }
 	public double Price { get; set; }
-    public string TicketCode { get; } = default!;
-    public DateTime Starting { get; }
-    public DateTime Ending { get; }
-    public double MoneyToPay { get; }
 
 	public Ticket(string ticketCode, string carPlate, string rateName, DateTime starting, DateTime ending, double moneyToPay)
     {
-        TicketCode = ticketCode;
+        Code = ticketCode;
         CarPlate = carPlate;
         RateName = rateName;
-        Starting = starting;
-        Ending = ending;
-        MoneyToPay = moneyToPay;
+        StartingDateTime = starting;
+        EndingDateTime = ending;
+        Price = moneyToPay;
     }
 }

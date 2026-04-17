@@ -20,4 +20,15 @@
     <PackageReference Include="NUnit3TestAdapter" Version="6.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="IllegallyParkedCar\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlueZoneNet.Adapter.ForObtainingRates.Stub\BlueZoneNet.Adapter.ForObtainingRates.Stub.csproj" />
+    <ProjectReference Include="..\BlueZoneNet.Adapter.ForPaying.Spy\BlueZoneNet.Adapter.ForPaying.Spy.csproj" />
+    <ProjectReference Include="..\BlueZoneNet.Adapter.ForStoringTickets.Fake\BlueZoneNet.Adapter.ForStoringTickets.Fake.csproj" />
+    <ProjectReference Include="..\BlueZoneNet.Hexagon\BlueZoneNet.Hexagon.csproj" />
+  </ItemGroup>
+
 </Project>
