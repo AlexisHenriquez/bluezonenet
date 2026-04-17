@@ -38,10 +38,10 @@ public class AllTicketsExpired
     [OneTimeSetUp]
     public void SetUp()
     {
-        Ticket ticket1 = new Ticket("0000000658","6989JJH","BLUE_ZONE",new DateTime(2022, 6, 1, 11, 8, 30),new DateTime(2022, 6, 1, 11, 9, 0),0.40);
-		Ticket ticket2 = new Ticket("0000000659","6989JJH","BLUE_ZONE",new DateTime(2022, 6, 1, 11, 9, 15),new DateTime(2022, 6, 1, 11, 10, 15),0.80);
-		Ticket ticket3 = new Ticket("0000000660","1365MDS","BLUE_ZONE",new DateTime(2022, 6, 1, 11, 9, 30),new DateTime(2022, 6, 1, 11, 11, 0),1.20);
-		Ticket ticket4 = new Ticket("0000000661","6989JJH","GREEN_ZONE",new DateTime(2022, 6, 1, 11, 10, 0),new DateTime(2022, 6, 1, 11, 10, 30),0.60);
+        Ticket ticket1 = new Ticket("0000000658","6989JJH","BLUE_ZONE",new DateTime(2022, 6, 11, 8, 30, 0),new DateTime(2022, 6, 11, 9, 0, 0),0.40);
+		Ticket ticket2 = new Ticket("0000000659","6989JJH","BLUE_ZONE",new DateTime(2022, 6, 11, 9, 15, 0),new DateTime(2022, 6, 11, 10, 15, 0),0.80);
+		Ticket ticket3 = new Ticket("0000000660","1365MDS","BLUE_ZONE",new DateTime(2022, 6, 11, 9, 30, 0),new DateTime(2022, 6, 11, 11, 0, 0),1.20);
+		Ticket ticket4 = new Ticket("0000000661","6989JJH","GREEN_ZONE",new DateTime(2022, 6, 11, 10, 0, 0),new DateTime(2022, 6, 11, 10, 30, 0),0.60);
 		tickets = [ticket1, ticket2, ticket3, ticket4];
 
         currentDateTime = ticket2.EndingDateTime.AddMinutes(1);
@@ -74,7 +74,7 @@ public class AllTicketsExpired
     private void WhenICheckAtCurrentDateTimeCarParkedInAreaWithRate(DateTime currentDateTime, string carPlate, string rateName)
     {
 		TestContext.Out.WriteLine("WHEN I check at '" + currentDateTime + "' car '" + carPlate + "' parked in an area with rate '" + rateName + "'");
-		this.illegallyParkedCar = SystemUnderTest.Instance.CarChecker.IllegallyParkedCar(currentDateTime.ToUniversalTime(), carPlate, rateName);
+		this.illegallyParkedCar = SystemUnderTest.Instance.CarChecker.IllegallyParkedCar(currentDateTime, carPlate, rateName);
 	}
 
     private void ThenIllegallyParkedCarShouldBe(bool expectedIllegallyParkedCar)
