@@ -9,7 +9,7 @@ Feature: Get all rates by name
   SO THAT
   I can choose the rate name of the zone I want to park the car at
 
-
+@DrivenPort
 Scenario: BLUE, GREEN and ORANGE rates
 
 Given there are the following rates at rate repository:
