@@ -18,7 +18,7 @@ public class RateEqualityComparer : IEqualityComparer<Rate>
         }
 
         return rate1.AmountPerHour == rate2.AmountPerHour && 
-            rate1.Name == rate1.Name;
+            rate1.Name == rate2.Name;
     }
 
     public int GetHashCode([DisallowNull] Rate obj)

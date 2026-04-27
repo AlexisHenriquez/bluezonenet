@@ -13,18 +13,6 @@ public class GetAllRatesByNameStepDefinitions
 {
     private Dictionary<string, Rate>? ratesByName;
 
-    private Dictionary<string, Rate> CreateRatesFromDataTable(DataTable dataTable)
-    {
-        Dictionary<string, Rate> rates = new Dictionary<string, Rate>();
-
-        foreach (var row in dataTable.Rows)
-        {
-            rates.Add(row["key"], new Rate() { AmountPerHour = double.Parse(row["amountPerHour"]), Name = row["name"] });
-        }
-
-        return rates;
-    }
-
     [Given("there are the following rates at rate repository:")]
     public void GivenThereAreTheFollowingRatesAtRateRepository(DataTable dataTable)
     {
@@ -48,7 +36,7 @@ public class GetAllRatesByNameStepDefinitions
     [Then("I should obtain the following rates indexed by name:")]
     public void ThenIShouldObtainTheFollowingRatesIndexedByName(DataTable dataTable)
     {
-        Dictionary<string, Rate> expectedRatesByName = CreateRatesFromDataTable(dataTable);
+        Dictionary<string, Rate> expectedRatesByName = dataTable.ToRatesDictionary();
         Assert.That(this.ratesByName, Is.EqualTo(expectedRatesByName).Using(new RateEqualityComparer()));
     }
 }
