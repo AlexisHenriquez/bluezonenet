@@ -23,7 +23,7 @@ public class GetAllRatesByNameStepDefinitions
         ForParkingCarsTestDriver.Instance.AppConfigurator = new AppConfigurator(rateProvider, storingTickets, paymentService);
         ForParkingCarsTestDriver.Instance.CarParker = new CarParker(rateProvider, storingTickets, paymentService);
 
-        ForParkingCarsTestDriver.Instance.AppConfigurator.InitRateProviderWith(dataTable.CreateSet<Rate>().ToList());
+        ForParkingCarsTestDriver.Instance.AppConfigurator.InitRateProviderWith(dataTable.ToRatesList());
     }
 
     [When("I ask for getting all rates by name")]

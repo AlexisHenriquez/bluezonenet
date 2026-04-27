@@ -6,13 +6,14 @@ public static class DataTableExtensions
 {
     public static Dictionary<string, Rate> ToRatesDictionary(this DataTable dataTable)
     {
-        Dictionary<string, Rate> rates = new Dictionary<string, Rate>();
+        return dataTable.Rows.ToDictionary(
+            row => row["key"],
+            row => new Rate() { AmountPerHour = double.Parse(row["amountPerHour"]), Name = row["name"] }
+        );
+    }
 
-        foreach (var row in dataTable.Rows)
-        {
-            rates.Add(row["key"], new Rate() { AmountPerHour = double.Parse(row["amountPerHour"]), Name = row["name"] });
-        }
-
-        return rates;
+    public static List<Rate> ToRatesList(this DataTable dataTable)
+    {
+        return dataTable.CreateSet<Rate>().ToList();
     }
 }
