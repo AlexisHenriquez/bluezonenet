@@ -6,6 +6,8 @@ public class PayRequest
     public string PaymentCard { get; set; } = default!;
     public double Amount { get; set; }
 
+    public PayRequest() { }
+
     public PayRequest(string ticketCode, string paymentCard, double moneyToPay)
     {
         TicketCode = ticketCode;

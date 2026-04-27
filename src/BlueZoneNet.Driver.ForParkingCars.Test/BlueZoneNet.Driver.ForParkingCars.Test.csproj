@@ -28,10 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="StepDefinitions\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BlueZoneNet.Adapter.ForObtainingRates.Stub\BlueZoneNet.Adapter.ForObtainingRates.Stub.csproj" />
     <ProjectReference Include="..\BlueZoneNet.Adapter.ForPaying.Spy\BlueZoneNet.Adapter.ForPaying.Spy.csproj" />
     <ProjectReference Include="..\BlueZoneNet.Adapter.ForStoringTickets.Fake\BlueZoneNet.Adapter.ForStoringTickets.Fake.csproj" />

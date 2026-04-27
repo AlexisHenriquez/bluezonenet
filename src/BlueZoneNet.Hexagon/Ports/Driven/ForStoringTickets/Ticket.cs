@@ -19,6 +19,8 @@ public class Ticket
 	public DateTime EndingDateTime { get; set; }
 	public double Price { get; set; }
 
+    public Ticket() { }
+
 	public Ticket(string ticketCode, string carPlate, string rateName, DateTime starting, DateTime ending, double moneyToPay)
     {
         Code = ticketCode;
