@@ -1,0 +1,53 @@
+﻿@page
+@model BlueZoneNet.Adapter.ForParkingCars.WebUI.Pages.ParkCarModel
+@{
+}
+<main role="main" class="container">
+    <div class="starter-template"><div>
+        <h3>Park a car</h3>
+        <form asp-page="/PurchaseTicket" method="post">
+                <div class="form-group row pt-3">
+                        <div class="col text-end">
+                                <label for="inputCarPlate" class="form-label">Car Plate:</label>
+                        </div>
+                        <div class="col">
+                                <input type="text" id="inputCarPlate" placeholder="Enter a car plate ..."  class="form-control" name="carPlate" value="">
+                        </div>
+                </div>
+                <div class="form-group row pt-3">
+                        <div class="col text-end">
+                                <label for="selectRateName" class="form-label">Rate:</label>
+                        </div>
+                        <div class="col">
+                                <select id="selectRateName" class="form-control" name="rateName">
+                                        <option value="">Select a rate ...</option>
+                                        <option value="BLUE_ZONE">BLUE_ZONE ( 0.80€ / hour )</option>
+                                        <option value="ORANGE_ZONE">ORANGE_ZONE ( 0.95€ / hour )</option>
+                                        <option value="GREEN_ZONE">GREEN_ZONE ( 1.20€ / hour )</option>
+                                </select>
+                        </div>
+                </div>
+                <div class="form-group row pt-3">
+                        <div class="col text-end">
+                                <label for="inputAmount" class="form-label">Amount (€):</label>
+                        </div>
+                        <div class="col">
+                                <input type="text" id="inputAmount" placeholder="Enter an amount in euros ..."  class="form-control" name="amount" value="">
+                        </div>
+                </div>
+                <div class="form-group row pt-3">
+                        <div class="col text-end">
+                                <label for="inputPaymentCard" class="form-label">Card Number:</label>
+                        </div>
+                        <div class="col">
+                                <input type="text" id="inputPaymentCard" placeholder="Enter a card number to pay with ..."  class="form-control" name="paymentCard" value="">
+                        </div>
+                </div>
+                <div class="form-group row pt-3">
+                        <div class="col">
+                                <button type="submit" class="btn btn-dark">Purchase Ticket</button>
+                        </div>
+                </div>
+        </form>
+    </div>
+</main>
