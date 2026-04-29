@@ -7,11 +7,11 @@ namespace BlueZoneNet.Driver.ForParkingCars.Test.StepDefinitions;
 [Binding]
 public class GenericPayErrorStepDefinitions
 {
-    private readonly ScenarioContext _scenarioContext;
+    private readonly ScenarioContext scenarioContext;
 
     public GenericPayErrorStepDefinitions(ScenarioContext scenarioContext)
     {
-        _scenarioContext = scenarioContext;
+        this.scenarioContext = scenarioContext;
     }
 
     [Given("next available ticket code is {string}")]
@@ -39,18 +39,18 @@ public class GenericPayErrorStepDefinitions
         {
             PurchaseTicketRequest purchaseTicketRequest = dataTable.ToPurchaseTicketRequestsList()[0];
             string ticketCode = ForParkingCarsTestDriver.Instance.CarParker.PurchaseTicket(purchaseTicketRequest);
-            _scenarioContext.Add("PurchasedTicketCode", ticketCode);
+            scenarioContext.Add("PurchasedTicketCode", ticketCode);
         }
         catch(PayErrorException payErrorException)
         {
-            _scenarioContext.Add("PayErrorException", payErrorException);
+            scenarioContext.Add("PayErrorException", payErrorException);
         }
     }
 
     [Then("I should obtain no ticket code")]
     public void ThenIShouldObtainNoTicketCode()
     {
-        Assert.That(_scenarioContext.ContainsKey("PurchasedTicketCode"), Is.False);
+        Assert.That(scenarioContext.ContainsKey("PurchasedTicketCode"), Is.False);
     }
 
     [Then("there should be no ticket with code {string} at ticket repository")]
@@ -78,6 +78,6 @@ public class GenericPayErrorStepDefinitions
     [Then("a PayErrorException should have been thrown")]
     public void ThenAPayErrorExceptionShouldHaveBeenThrown()
     {
-        Assert.That(_scenarioContext["PayErrorException"], Is.Not.Null);
+        Assert.That(scenarioContext["PayErrorException"], Is.Not.Null);
     }
 }

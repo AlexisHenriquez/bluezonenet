@@ -5,11 +5,11 @@ namespace BlueZoneNet.Driver.ForParkingCars.Test.StepDefinitions;
 [Binding]
 public class AtOrangeZonePayingFor2HoursStepDefinitions
 {
-    private readonly ScenarioContext _scenarioContext;
+    private readonly ScenarioContext scenarioContext;
 
     public AtOrangeZonePayingFor2HoursStepDefinitions(ScenarioContext scenarioContext)
     {
-        _scenarioContext = scenarioContext;
+        this.scenarioContext = scenarioContext;
     }
 
     [Given("the payment is valid")]
@@ -21,7 +21,7 @@ public class AtOrangeZonePayingFor2HoursStepDefinitions
     [Then("I should obtain the ticket code {string}")]
     public void ThenIShouldObtainTheTicketCode(string expectedPurchasedTicketCode)
     {
-        Assert.That(_scenarioContext["PurchasedTicketCode"], Is.EqualTo(expectedPurchasedTicketCode));
+        Assert.That(scenarioContext["PurchasedTicketCode"], Is.EqualTo(expectedPurchasedTicketCode));
     }
 
     [Then("there should be the following ticket at ticket repository:")]
@@ -35,6 +35,6 @@ public class AtOrangeZonePayingFor2HoursStepDefinitions
     [Then("no PayErrorException should have been thrown")]
     public void ThenNoPayErrorExceptionShouldHaveBeenThrown()
     {
-        Assert.That(_scenarioContext.ContainsKey("PayErrorException"), Is.False);
+        Assert.That(scenarioContext.ContainsKey("PayErrorException"), Is.False);
     }
 }
