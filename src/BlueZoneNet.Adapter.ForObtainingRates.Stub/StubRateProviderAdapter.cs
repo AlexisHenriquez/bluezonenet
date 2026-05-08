@@ -11,7 +11,12 @@ public class StubRateProviderAdapter : IForObtainingRates
 
 	public StubRateProviderAdapter()
     {
-		this.rates = new List<Rate>();
+		this.rates = new List<Rate>()
+		{
+			new Rate() { Name = "BLUE_ZONE", AmountPerHour = 0.80 },
+			new Rate() { Name = "ORANGE_ZONE", AmountPerHour = 0.95 },
+			new Rate() { Name = "GREEN_ZONE", AmountPerHour = 1.20 },
+		};
 	}
 
 	public List<Rate> FindAll()
