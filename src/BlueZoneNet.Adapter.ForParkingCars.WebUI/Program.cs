@@ -1,14 +1,31 @@
+using System.Reflection;
+using BlueZoneNet.Hexagon;
+using BlueZoneNet.Hexagon.Factory;
+using BlueZoneNet.Hexagon.Ports.Driven.ForObtainingRates;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.Scan(scan => scan
-    .FromAssemblies(AppDomain.CurrentDomain.GetAssemblies()) // Scans all loaded assemblies
-    .AddClasses(classes => classes.InNamespaces("BlueZoneNet.Adapter.ForObtainingRates.Stub"))
-    .AddClasses(classes => classes.InNamespaces("BlueZoneNet.Adapter.ForPaying.Spy"))
-    .AddClasses(classes => classes.InNamespaces("BlueZoneNet.Adapter.ForStoringTickets.Fake"))
-    .AsImplementedInterfaces()
-    .WithScopedLifetime());
+var assemblies = new List<Assembly>();
 
-// Add services to the container.
+foreach (string assemblyPath in Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll", SearchOption.AllDirectories))
+{
+    if (assemblyPath.Contains("BlueZoneNet"))
+    {
+        var assembly = System.Runtime.Loader.AssemblyLoadContext.Default.LoadFromAssemblyPath(assemblyPath);
+        assemblies.Add(assembly);
+    }
+}
+
+builder.Services.Scan(scan => scan
+     .FromAssemblies(assemblies)
+     .AddClasses(classes => classes.InNamespaces(
+         "BlueZoneNet.Adapter.ForObtainingRates.Stub",
+         "BlueZoneNet.Adapter.ForPaying.Spy",
+         "BlueZoneNet.Adapter.ForStoringTickets.Fake",
+         "BlueZoneNet.Hexagon"))
+     .AsImplementedInterfaces()
+     .WithTransientLifetime());
+
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
