@@ -15,4 +15,10 @@
           DestinationFolder="$(SolutionDir)BlueZoneNet.Adapter.ForParkingCars.WebUI\bin\$(Configuration)\net10.0\" />
   </Target>
 
+  <Target Name="CopyPDB" AfterTargets="PostBuildEvent">
+    <Copy 
+      SourceFiles="$(TargetDir)$(TargetName).pdb" 
+      DestinationFolder="$(SolutionDir)BlueZoneNet.Adapter.ForParkingCars.WebUI\bin\$(Configuration)\net10.0\" />
+  </Target>
+
 </Project>
