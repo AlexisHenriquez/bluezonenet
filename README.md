@@ -44,4 +44,4 @@ __BlueZoneNet__ allows car drivers to pay remotely for parking cars at zones in 
 
 - Open folder `<bluezonenet_dir>` with Visual Studio Code
 
-- Run BlueZoneNet.Adapter.ForParkingCars.WebUI project
+- Run __BlueZoneNet.Adapter.ForParkingCars.WebUI__ project
