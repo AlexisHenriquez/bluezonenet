@@ -1,0 +1,38 @@
+﻿@page
+@model BlueZoneNet.Adapter.ForParkingCars.WebUI.Pages.GetTicketModel
+@{
+}
+<div class="starter-template">
+    <h3>Ticket successfully purchased</h3>
+    <hr>
+    <p>You've just purchased the following ticket for parking your car</p>
+    <div class="row pt-3">
+            <div class="col text-end">Ticket code:</div>
+            <div class="col text-start"><span>@Model.Ticket?.Code</span></div>
+    </div>
+    <div class="row pt-3">
+            <div class="col text-end">Car plate:</div>
+            <div class="col text-start"><span>@Model.Ticket?.CarPlate</span></div>
+    </div>
+    <div class="row pt-3">
+            <div class="col text-end">Rate:</div>
+            <div class="col text-start"><span>@Model.TicketRate</span></div>
+    </div>
+    <div class="row pt-3">
+            <div class="col text-end">Starting date-time:</div>
+            <div class="col text-start"><span>@Model.Ticket?.StartingDateTime.ToString("yyyy/MM/dd HH:mm")</span></div>
+    </div>
+    <div class="row pt-3">
+            <div class="col text-end">Ending date-time:</div>
+            <div class="col text-start"><span>@Model.Ticket?.EndingDateTime.ToString("yyyy/MM/dd HH:mm")</span></div>
+    </div>
+    <div class="row pt-3">
+            <div class="col text-end">Price (€):</div>
+            <div class="col text-start"><span>@Model.Ticket?.Price</span></div>
+    </div>
+    <div class="row pt-3">
+            <div class="col">
+                <a href="/" class="btn btn-dark" role="button">Go To BlueZoneNet Home Page</a>
+            </div>
+    </div>
+</div>

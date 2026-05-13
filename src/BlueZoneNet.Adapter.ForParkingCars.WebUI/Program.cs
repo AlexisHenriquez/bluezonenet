@@ -24,7 +24,7 @@ builder.Services.Scan(scan => scan
          "BlueZoneNet.Adapter.ForStoringTickets.Fake",
          "BlueZoneNet.Hexagon"))
      .AsImplementedInterfaces()
-     .WithTransientLifetime());
+     .WithSingletonLifetime());
 
 builder.Services.AddRazorPages();
 
