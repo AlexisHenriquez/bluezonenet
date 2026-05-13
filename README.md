@@ -19,3 +19,29 @@ __BlueZoneNet__ allows car drivers to pay remotely for parking cars at zones in 
     - Check whether a car is illegally parked at a zone. This will happen if there is no valid ticket for the car and the rate of the zone. A ticket is valid if current date-time is between the starting and ending date-time of the ticket period.
     
 - Driven actors needed by the application are: a rate repository, a ticket repository, and a payment service.
+
+### Development environment:
+
+- .NET SDK 10
+
+- ASP.NET Core 10
+
+- Visual Studio Code
+
+- Cucumber extension for VS Code
+
+- Windows 11
+
+- NUnit 4 for TDD
+
+- Reqnroll.NUnit 3 for BDD
+
+### Instructions:
+
+- Install .NET SDK 10 and Visual Studio Code with desired extensions
+
+- Download and extract this github repo to a local directory on your computer ( `<bluezonenet_dir>` )
+
+- Open folder `<bluezonenet_dir>` with Visual Studio Code
+
+- Run BlueZoneNet.Adapter.ForParkingCars.WebUI project
